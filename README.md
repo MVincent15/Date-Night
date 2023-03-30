@@ -11,5 +11,3 @@ So that I have new options provided for me each date night
 GIVEN a date generator website
 WHEN I click the randomize button
 THEN a random movie and dinner spot are chosen for me
-
-
