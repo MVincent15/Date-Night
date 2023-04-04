@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--added bulma sheet-->
+     <!--added bulma sheet-->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
@@ -41,7 +41,7 @@
                 <div class="field has-addons">
                   <div class="control is-expanded">
                     <div class="select is-fullwidth">
-                      <select id="">
+                      <select id="movieGenre">
                         <option value="">Any</option>
                         <option value="28">Action</option>
                         <option value="12">Adventure</option>
@@ -65,12 +65,7 @@
                       </select>
                     </div>
                   </div>
-                  <div class="">
-                    <button type="submit" class="button is-danger">
-                      Submit
-                    </button>
                 </div>
-              </div>
               <div class="">
                 <label class="label">Food Genre</label>
                 <div class="field has-addons">
@@ -88,11 +83,6 @@
                       </select>
                     </div>
                   </div>
-                  <div class="">
-                    <button type="submit" class="button is-danger">
-                      Submit
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>
@@ -102,15 +92,22 @@
                 <div class="control is-expanded">
                   <input class="input" id="zipcode" type="text" placeholder="Text Here">
                 </div>
-                <div class="control">
-                  <a class="button is-danger">
-                    Search
-                  </a>
-                </div>
               </div>
             </div>
+            <button type="submit" id="submit" class="button is-danger">
+              Submit
+            </button>
           </div>
         </div>
+      </div>
+      <div class="modal" id="zipCodeModal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <div class="box">
+            <p>Please enter a valid zip code.</p>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
       </div>
     </section>
     <section class="column">
@@ -140,7 +137,7 @@
             <p class="card-header-title">Look at the Restaurant Map Below</p>
           </header>
           <div class="card-content">
-            <div class="content">
+            <div class="content google-map">
               <iframe id="restaurant-map"
       </section>
       <section class="column">
@@ -183,10 +180,18 @@
             </div>
           </div>
         </div>
+
+      </section>
+      <!--could add a section which would display the saved movie outputs and possible restaurants?-->
+    </main>
+       <script src="./assets/js/script.js"></script>
+  </body>
+
       </div>
     </section>
     <!--could add a section which would display the saved movie outputs and possible restaurants?-->
   </main>
   <script src="./assets/js/script.js"></script>
 </body>
+
 
