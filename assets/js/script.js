@@ -5,6 +5,26 @@ var restaurantMap = document.getElementById("restaurant-map");
 var zipCodeText = document.getElementById("zipcode");
 
 var foodGenreText = document.getElementById("foodGenre");
+var movieGenreText = document.getElementById("movieGenre");
+var submitButton = document.getElementById("submit");
+
+function init(){
+    var storedMovieGenre = JSON.parse(localStorage.getItem("movieGenre"));
+    var storedFoodGenre = JSON.parse(localStorage.getItem("foodGenre"));
+    var storedZipCode = JSON.parse(localStorage.getItem("zipcode"));
+
+    if (storedMovieGenre !== null){
+        movieGenreText.value = storedMovieGenre;
+    }
+
+    if (storedFoodGenre !== null){
+        foodGenreText.value = storedFoodGenre;
+    }
+
+    if (storedZipCode !== null){
+        zipCodeText.value = storedZipCode;
+    }
+}
 
 
 //on click/ submit event
@@ -24,3 +44,13 @@ function generateRestaurantMap(){
     //add the link to the src attribute on the HTML page
     restaurantMap.setAttribute("src", mapLink);
 
+}
+
+function storePreferences(event){
+    event.preventDefault();
+    localStorage.setItem("movieGenre", JSON.stringify(movieGenreText.value));
+    localStorage.setItem("foodGenre", JSON.stringify(foodGenreText.value));
+    localStorage.setItem("zipcode", JSON.stringify(zipCodeText.value));
+}
+
+submitButton.addEventListener("submit", storePreferences);
