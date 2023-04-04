@@ -44,7 +44,7 @@ function generateRestaurantMap(){
 }
 
 function storePreferences(event){
-    event.prevent
+    event.preventDefault();
     localStorage.setItem("movieGenre", JSON.stringify(movieGenreText.value));
     localStorage.setItem("foodGenre", JSON.stringify(foodGenreText.value));
     localStorage.setItem("zipcode", JSON.stringify(zipCodeText.value));
