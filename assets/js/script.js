@@ -9,6 +9,7 @@ var movieGenreText = document.getElementById("movieGenre");
 var submitButton = document.getElementById("submit");
 
 function init(){
+    //pull items from local strage
     var storedMovieGenre = JSON.parse(localStorage.getItem("movieGenre"));
     var storedFoodGenre = JSON.parse(localStorage.getItem("foodGenre"));
     var storedZipCode = JSON.parse(localStorage.getItem("zipcode"));
@@ -24,6 +25,8 @@ function init(){
     if (storedZipCode !== null){
         zipCodeText.value = storedZipCode;
     }
+    //generate restaurant map
+    generateRestaurantMap();
 }
 
 
@@ -43,7 +46,7 @@ function generateRestaurantMap(){
 }
 
 
-generateRestaurantMap();
+
 
 
 //submitButton.addEventListener("submit", generateRestaurantMap)
@@ -59,4 +62,6 @@ function storePreferences(event){
     generateRestaurantMap();
 }
 
-submitButton.addEventListener("submit", storePreferences);
+submitButton.addEventListener("click", storePreferences);
+
+init();
