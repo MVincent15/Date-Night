@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--added bulma sheet-->
+     <!--added bulma sheet-->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
@@ -61,7 +61,7 @@
                         <option value="10770">TV Movie</option>
                         <option value="53">Thriller</option>
                         <option value="10752">War</option>
-                        <option value="37">Western</option>></option>
+                        <option value="37">Western</option>
                       </select>
                     </div>
                   </div>
@@ -69,11 +69,14 @@
                     <button type="submit" class="button is-danger">
                       Submit
                     </button>
+                    <button id="clear-btn" type="button" class="button is-info">
+                      Clear
+                    </button>
                   </div>
                 </div>
               </div>
               <div class="">
-                <label class="label">Food Genre</label>
+                <label class="label">Cuisine</label>
                 <div class="field has-addons">
                   <div class="control is-expanded">
                     <div class="select is-fullwidth">
@@ -85,13 +88,16 @@
                         <option value="Mexican">Mexican</option>
                         <option value="Japanese">Japanese</option>
                         <option value="Korean">Korean</option>
-                        <option value="American">American</option></option>
+                        <option value="American">American</option>
                       </select>
                     </div>
                   </div>
                   <div class="">
                     <button type="submit" class="button is-danger">
                       Submit
+                    </button>
+                    <button id="clear-btn" type="button" class="button is-info">
+                      Clear
                     </button>
                   </div>
                 </div>
@@ -143,6 +149,6 @@
       </section>
       <!--could add a section which would display the saved movie outputs and possible restaurants?-->
     </main>
-    <script src="./assets/js/script.js"></script>
+       <script src="./assets/js/script.js"></script>
   </body>
 </html>
