@@ -5,15 +5,14 @@ var restaurantMap = document.getElementById("restaurant-map");
 var zipCodeText = document.getElementById("zipcode");
 var cuisineText = document.getElementById("foodGenre");
 
-
 //on click/ submit event
 function generateRestaurantMap(){
     //if on a submit event, stop the page from reloading
     // event.PreventDefault();
 
     //take user zipcode and cuisine selections
-    // userZipCode = zipCodeText.value;
-    // chosenCuisine = cuisineText.value;
+    userZipCode = zipCodeText.value;
+    chosenFoodGenre = foodGenreText.value;
 
     //generate the API link
     var mapLink = 
@@ -28,4 +27,3 @@ generateRestaurantMap();
 
 
 //submitButton.addEventListener("submit", generateRestaurantMap)
-
