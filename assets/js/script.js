@@ -5,6 +5,8 @@ var restaurantMap = document.getElementById("restaurant-map");
 var zipCodeText = document.getElementById("zipcode");
 var cuisineText = document.getElementById("foodGenre");
 
+
+
 //on click/ submit event
 function generateRestaurantMap(){
     //if on a submit event, stop the page from reloading
