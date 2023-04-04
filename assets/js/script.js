@@ -3,7 +3,9 @@ var chosenFoodGenre;
 
 var restaurantMap = document.getElementById("restaurant-map");
 var zipCodeText = document.getElementById("zipcode");
+
 var foodGenreText = document.getElementById("foodGenre");
+
 
 //on click/ submit event
 function generateRestaurantMap(){
@@ -11,6 +13,7 @@ function generateRestaurantMap(){
     // event.PreventDefault();
 
     //take user zipcode and cuisine selections
+
     userZipCode = zipCodeText.value;
     chosenFoodGenre = foodGenreText.value;
 
@@ -21,4 +24,3 @@ function generateRestaurantMap(){
     //add the link to the src attribute on the HTML page
     restaurantMap.setAttribute("src", mapLink);
 
-}
