@@ -9,12 +9,10 @@ var movieGenreText = document.getElementById("movieGenre");
 var submitButton = document.getElementById("submit");
 
 function init(){
-    //pull user preferences from local storage
     var storedMovieGenre = JSON.parse(localStorage.getItem("movieGenre"));
     var storedFoodGenre = JSON.parse(localStorage.getItem("foodGenre"));
     var storedZipCode = JSON.parse(localStorage.getItem("zipcode"));
 
-    //check if there is data stored in each, if there is, it updates the input field to the saved value
     if (storedMovieGenre !== null){
         movieGenreText.value = storedMovieGenre;
     }
@@ -26,9 +24,6 @@ function init(){
     if (storedZipCode !== null){
         zipCodeText.value = storedZipCode;
     }
-
-    //updates the restaurant map with previous selections on load
-    generateRestaurantMap();
 }
 
 
@@ -47,6 +42,12 @@ function generateRestaurantMap(){
 
 }
 
+
+generateRestaurantMap();
+
+
+//submitButton.addEventListener("submit", generateRestaurantMap)
+
 function storePreferences(event){
     //prevent page from reloading
     event.preventDefault();
@@ -58,7 +59,4 @@ function storePreferences(event){
     generateRestaurantMap();
 }
 
-submitButton.addEventListener("click", storePreferences);
-
-//run on load
-init();
+submitButton.addEventListener("submit", storePreferences);
