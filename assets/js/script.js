@@ -7,6 +7,7 @@ var zipCodeText = document.getElementById("zipcode");
 var foodGenreText = document.getElementById("foodGenre");
 var movieGenreText = document.getElementById("movieGenre");
 var submitButton = document.getElementById("submit");
+var zipcodemodal = document.getElementById("zipcodemodal");
 
 function init(){
     //pull items from local strage
@@ -28,6 +29,18 @@ function init(){
     //generate restaurant map
     generateRestaurantMap();
 }
+
+
+document.getElementById('submit').addEventListener('click', (event) => {
+  if (zipCodeText.value === '') {
+    event.preventDefault();
+    zipCodeModal.classList.add('is-active');
+  }
+});
+
+document.querySelector('.modal-close').addEventListener('click', () => {
+  zipCodeModal.classList.remove('is-active');
+});
 
 
 function generateRestaurantMap(){
