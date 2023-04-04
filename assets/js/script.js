@@ -3,6 +3,7 @@ var chosenFoodGenre;
 
 var restaurantMap = document.getElementById("restaurant-map");
 var zipCodeText = document.getElementById("zipcode");
+
 var foodGenreText = document.getElementById("foodGenre");
 var movieGenreText = document.getElementById("movieGenre");
 var submitButton = document.getElementById("submit");
@@ -25,12 +26,14 @@ function init(){
     }
 }
 
+
 //on click/ submit event
 function generateRestaurantMap(){
     //if on a submit event, stop the page from reloading
     // event.PreventDefault();
 
     //take user zipcode and cuisine selections
+
     userZipCode = zipCodeText.value;
     chosenFoodGenre = foodGenreText.value;
 
