@@ -1,0 +1,7 @@
+ TMDB API Key: https://api.themoviedb.org/3/movie/550?api_key=9382d0b84dae3b5b2a9af9c9b2ba057e 
+
+Genre Query: https://api.themoviedb.org/3/genre/movie/list?c&language=en-US
+
+// https://api.themoviedb.org/3/genre/movie/list?api_key=9382d0b84dae3b5b2a9af9c9b2ba057e&movie_id=12&language=en-US
+
+// https://api.themoviedb.org/3/discover/movie?api_key=9382d0b84dae3b5b2a9af9c9b2ba057e&with_genres=28
