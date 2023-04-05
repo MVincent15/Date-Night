@@ -1,3 +1,12 @@
+body{
+  background-image: url(../images/night-sky.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+
 .movie-output-card {
     background-color: hsl(217, 74%, 64%);
     margin: 20px;
@@ -39,7 +48,7 @@
   }
   
   .modal-content {
-    background-color: white;
+    background-color: lightgreen;
     padding: 20px;
   }
   
