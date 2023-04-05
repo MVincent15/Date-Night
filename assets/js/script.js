@@ -78,6 +78,3 @@ function storePreferences(event){
 submitButton.addEventListener("click", storePreferences);
 
 init();
-
-
-//added note 
