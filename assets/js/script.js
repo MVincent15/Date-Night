@@ -1,5 +1,8 @@
 var userZipCode;
 var chosenFoodGenre;
+var chosenMovieGenre;
+
+var movieTitle = document.getElementById("movie-title")
 
 var restaurantMap = document.getElementById("restaurant-map");
 var zipCodeText = document.getElementById("zipcode");
@@ -52,6 +55,26 @@ function generateRestaurantMap(){
 
 }
 
+function generateMovieChoices(){
+
+  chosenMovieGenre = movieGenre.value;
+
+  var movieLink = "https://api.themoviedb.org/3/discover/movie?api_key=9382d0b84dae3b5b2a9af9c9b2ba057e&with_genres=" + chosenMovieGenre;
+
+   fetch(movieLink)
+    .then(function (response) {
+    return response.json();
+    })
+    .then(function (data) {
+    console.log(data);
+    for (var i = 0; i < data.results.length; i++) {
+      console.log(data.results[i].title)
+      movieTitle.textContent = data.results[i].title;
+    }
+  });
+}
+ submitButton.addEventListener("click", generateMovieChoices);
+ 
 function submitPreferences(event){
     //prevent page from reloading
     event.preventDefault();
@@ -72,3 +95,5 @@ modalCloseButton.addEventListener('click', () => {
 
 //runs on load
 init();
+
+//
