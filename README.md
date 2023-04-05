@@ -2,8 +2,8 @@
 
 ## User Story
 
-As a couple
-I want to figure out food and a movie for a date night
+As a part of a couple
+I want to figure out dinner and a movie for a date night
 So that I have new options provided for me each date night
 
 ## Acceptance Criteria
