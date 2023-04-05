@@ -15,13 +15,13 @@
 
   <body>
     <header>
-      <section class="hero is-link has-text-centered">
+      <section class="hero has-text-centered">
         <div class="hero-body">
-          <p class="title is-size-1 has-text-danger">
+          <p class="title is-size-1 has-text-success">
             Date Night Activity Generator
           </p>
           <p class="subtitle has-text-success">
-            “I dont know, why dont you pick” “Dont worry we will pick for you”
+            “I don't know, why don't you pick” “Don't worry we will pick for you”
           </p>
         </div>
       </section>
@@ -30,17 +30,17 @@
       <section class="">
         <div class="notification">
           <div class="content">
-            <h3 class="has-text-black">Randomize Your Choices Here</h3>
-            <p class="has-text-danger">
+            <h3 class="has-text-link">Randomize Your Choices Here</h3>
+            <p class="has-text-link">
               Select you preferences below and we will generate a random movie
               and some restaurant selections near you!
             </p>
             <div class="">
               <div class="">
-                <label class="label">Movie Genre</label>
+                <label class="label has-text-link">Movie Genre</label>
                 <div class="field has-addons">
                   <div class="control is-expanded">
-                    <div class="select is-fullwidth">
+                    <div class="select is-fullwidth is-success">
                       <select id="movieGenre">
                         <option value="">Any</option>
                         <option value="28">Action</option>
@@ -67,10 +67,10 @@
                   </div>
                 </div>
               <div class="">
-                <label class="label">Food Genre</label>
+                <label class="label has-text-link">Food Genre</label>
                 <div class="field has-addons">
                   <div class="control is-expanded">
-                    <div class="select is-fullwidth">
+                    <div class="select is-fullwidth is-success">
                       <select id="foodGenre">
                         <option value="">Any</option>
                         <option value="Chinese">Chinese</option>
@@ -87,14 +87,14 @@
               </div>
             </div>
             <div>
-              <label class="label">Enter Your Zipcode</label>
+              <label class="label has-text-link">Enter Your Zipcode</label>
               <div class="field has-addons">
                 <div class="control is-expanded">
-                  <input class="input" id="zipcode" type="text" placeholder="Text Here">
+                  <input class="input is-success" id="zipcode" type="text" placeholder="Text Here">
                 </div>
               </div>
             </div>
-            <button type="submit" id="submit" class="button is-danger">
+            <button type="submit" id="submit" class="button is-success is-outlined">
               Submit
             </button>
           </div>
@@ -126,7 +126,7 @@
             </div>
             <footer class="card-footer">
               <!--thought possibly we could use the save button to add to our Saved Date night list, which woe could create at the bottom of the page-->
-              <a href="#" class="card-footer-item">Save</a>
+              <a href="#" class="card-footer-item has-text-danger">Save</a>
             </footer>
           </div>
         </div>
@@ -134,7 +134,7 @@
       <div class="title is-parent is-vertical">
         <div class="card restaurant-map-card">
           <header class="card-header">
-            <p class="card-header-title">Look at the Restaurant Map Below</p>
+            <p class="card-header-title has-text-link">Look at the Restaurant Map Below</p>
           </header>
           <div class="card-content">
             <div class="content google-map">
@@ -160,9 +160,7 @@
 
       </div>
     </section>
-    <!--could add a section which would display the saved movie outputs and possible restaurants?-->
-  </main>
-  <script src="./assets/js/script.js"></script>
-</body>
+  </html>
+
 
 
