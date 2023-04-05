@@ -7,6 +7,7 @@ var foodGenreText = document.getElementById("foodGenre");
 var movieGenreText = document.getElementById("movieGenre");
 var submitButton = document.getElementById("submit");
 var zipCodeModal = document.getElementById("zipCodeModal");
+var modalCloseButton = document.querySelector('.modal-close');
 
 function init(){
     //pull items from local storage
@@ -28,7 +29,7 @@ function init(){
     generateRestaurantMap();
 }
 
-
+//check if zip code is not 5 digits, if not, it will present a modal and clear the text field
 function validateZipCode() {
     if (zipCodeText.value.length < 5 || zipCodeText.value.length > 5) {
         zipCodeModal.classList.add('is-active');
@@ -36,13 +37,8 @@ function validateZipCode() {
     }
 }
 
-document.querySelector('.modal-close').addEventListener('click', () => {
-  zipCodeModal.classList.remove('is-active');
-});
-
-
+//updates the google map snippet with food genre and zip code
 function generateRestaurantMap(){
-
     //take user zipcode and cuisine selections
     userZipCode = zipCodeText.value;
     chosenFoodGenre = foodGenreText.value;
@@ -56,12 +52,6 @@ function generateRestaurantMap(){
 
 }
 
-
-
-
-
-//submitButton.addEventListener("submit", generateRestaurantMap)
-
 function submitPreferences(event){
     //prevent page from reloading
     event.preventDefault();
@@ -74,6 +64,11 @@ function submitPreferences(event){
     validateZipCode();
 }
 
+//event listeners on buttons
 submitButton.addEventListener("click", submitPreferences);
+modalCloseButton.addEventListener('click', () => {
+    zipCodeModal.classList.remove('is-active');
+  });
 
+//runs on load
 init();
