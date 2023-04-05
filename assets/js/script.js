@@ -6,26 +6,25 @@ var movieTitle = document.getElementById("movie-title")
 
 var restaurantMap = document.getElementById("restaurant-map");
 var zipCodeText = document.getElementById("zipcode");
-
 var foodGenreText = document.getElementById("foodGenre");
 var movieGenreText = document.getElementById("movieGenre");
 var submitButton = document.getElementById("submit");
-var zipcodemodal = document.getElementById("zipcodemodal");
+var zipCodeModal = document.getElementById("zipCodeModal");
+var modalCloseButton = document.querySelector('.modal-close');
 
 function init(){
-    //pull items from local strage
+    //pull items from local storage
     var storedMovieGenre = JSON.parse(localStorage.getItem("movieGenre"));
     var storedFoodGenre = JSON.parse(localStorage.getItem("foodGenre"));
     var storedZipCode = JSON.parse(localStorage.getItem("zipcode"));
 
+    //checks if there are values pull from local storage, if so, fill in the form with it
     if (storedMovieGenre !== null){
         movieGenreText.value = storedMovieGenre;
     }
-
     if (storedFoodGenre !== null){
         foodGenreText.value = storedFoodGenre;
     }
-
     if (storedZipCode !== null){
         zipCodeText.value = storedZipCode;
     }
@@ -33,21 +32,16 @@ function init(){
     generateRestaurantMap();
 }
 
+//check if zip code is not 5 digits, if not, it will present a modal and clear the text field
+function validateZipCode() {
+    if (zipCodeText.value.length < 5 || zipCodeText.value.length > 5) {
+        zipCodeModal.classList.add('is-active');
+        zipCodeText.value = '';
+    }
+}
 
-document.getElementById('submit').addEventListener('click', (event) => {
-  if (zipCodeText.value === '') {
-    event.preventDefault();
-    zipCodeModal.classList.add('is-active');
-  }
-});
-
-document.querySelector('.modal-close').addEventListener('click', () => {
-  zipCodeModal.classList.remove('is-active');
-});
-
-
+//updates the google map snippet with food genre and zip code
 function generateRestaurantMap(){
-
     //take user zipcode and cuisine selections
     userZipCode = zipCodeText.value;
     chosenFoodGenre = foodGenreText.value;
@@ -80,13 +74,8 @@ function generateMovieChoices(){
   });
 }
  submitButton.addEventListener("click", generateMovieChoices);
-
-
-
-
-//submitButton.addEventListener("submit", generateRestaurantMap)
-
-function storePreferences(event){
+ 
+function submitPreferences(event){
     //prevent page from reloading
     event.preventDefault();
     //store each field into it's own slot in local storage
@@ -95,10 +84,16 @@ function storePreferences(event){
     localStorage.setItem("zipcode", JSON.stringify(zipCodeText.value));
     //generate the restaurant map
     generateRestaurantMap();
+    validateZipCode();
 }
 
-submitButton.addEventListener("click", storePreferences);
+//event listeners on buttons
+submitButton.addEventListener("click", submitPreferences);
+modalCloseButton.addEventListener('click', () => {
+    zipCodeModal.classList.remove('is-active');
+  });
 
+//runs on load
 init();
 
 //
