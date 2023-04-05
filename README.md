@@ -4,7 +4,7 @@
 
 As a part of a couple
 I want to figure out dinner and a movie for a date night
-So that I have new options provided for me each date night
+So that I don't waste time deciding, and I have new options provided for me based on my search.
 
 ## Acceptance Criteria
 
