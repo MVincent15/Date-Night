@@ -3,6 +3,10 @@ var chosenFoodGenre;
 var chosenMovieGenre;
 
 var movieTitle = document.getElementById("movie-title")
+var movieRelease = document.getElementById("movie-release")
+var movieDuration = document.getElementById("movie-duration")
+var movieOverview = document.getElementById("movie-overview")
+var moviePoster = document.getElementById("movie-poster")
 
 var restaurantMap = document.getElementById("restaurant-map");
 var zipCodeText = document.getElementById("zipcode");
@@ -60,7 +64,7 @@ function generateMovieChoices(){
   chosenMovieGenre = movieGenre.value;
 
   var movieLink = "https://api.themoviedb.org/3/discover/movie?api_key=9382d0b84dae3b5b2a9af9c9b2ba057e&with_genres=" + chosenMovieGenre;
-
+  
    fetch(movieLink)
     .then(function (response) {
     return response.json();
@@ -68,8 +72,14 @@ function generateMovieChoices(){
     .then(function (data) {
     console.log(data);
     for (var i = 0; i < data.results.length; i++) {
+
+      var posterLink = "https://image.tmdb.org/t/p/original" + data.results[i].poster_path;
+
       console.log(data.results[i].title)
       movieTitle.textContent = data.results[i].title;
+      movieRelease.textContent = data.results[i].release_date;
+      movieOverview.textContent = data.results[i].overview;
+      moviePoster.setAttribute("src", posterLink );
     }
   });
 }
