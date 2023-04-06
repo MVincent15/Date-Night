@@ -34,6 +34,7 @@ function init(){
     }
     //generate restaurant map
     generateRestaurantMap();
+    generateMovieChoices();
 }
 
 //check if zip code is not 5 digits, if not, it will present a modal and clear the text field
