@@ -3,8 +3,12 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  font-family: 'Suwannaphum', serif;
 }
 
+.hidden{
+  display: none;
+}
 
 
 .movie-output-card {
@@ -64,3 +68,5 @@ body{
    background-color: midnightblue;
 
   }
+ 
+  
