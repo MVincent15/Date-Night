@@ -121,7 +121,7 @@ function submitPreferences(event){
 submitButton.style.display = "none"; 
 
 zipCodeText.addEventListener("input", () => {
-  if (zipCodeText.validity.valid)  {
+  if (zipCodeText.value.trim() .length === 5) {
     submitButton.style.display = "block"; 
   } else {
     submitButton.style.display = "none"; 

@@ -1,9 +1,8 @@
+html,
 body{
   background-image: url(../images/night-sky.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  font-family: 'Suwannaphum', serif;
+ font-family: 'Suwannaphum', serif;
+ 
 }
 
 .hidden{
