@@ -1,4 +1,4 @@
-# Date-Night Generator - Dinner and Movie
+# Dinner and A Movie
 
 ## User Story
 
