@@ -30,4 +30,8 @@ https://mvincent15.github.io/Dinner-and-a-Movie/
 
 Responsive Google Maps: https://blog.hubspot.com/website/how-to-embed-google-map-in-html#:~:text=To%20make%20a%20responsive%20Google%20Map%20in%20HTML%2C%20take%20your,with%20the%20class%20google%2Dmap.&text=Here's%20the%20result.,the%20size%20of%20your%20browser.
 
+Responsive Background: https://stackoverflow.com/questions/12609110/responsive-css-background-images
+
+
+
 
