@@ -21,11 +21,7 @@ body{
 
 
 .movie-output-card {
-    background-color: hsl(217, 74%, 64%);
-    margin: 20px;
-}
-.restaurant-map-card {
-    margin: 20px;
+    background-color: white;
 }
 
 .google-map {
