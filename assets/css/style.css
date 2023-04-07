@@ -1,16 +1,11 @@
 html,
 body{
   background-image: url(../images/night-sky.jpg);
- font-family: 'Suwannaphum', serif;
- background:absolute;
-  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
   background-attachment: fixed;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  background-size: cover;
+ font-family: 'Suwannaphum', serif;
   
  
 }
