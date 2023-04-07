@@ -96,6 +96,17 @@ function submitPreferences(event){
     generateRestaurantMap();
     validateZipCode();
 }
+// hide the submit button until the user enters a zip code
+
+submitButton.style.display = "none"; 
+
+zipCodeText.addEventListener("input", () => {
+  if (zipCodeText.value.trim() .length === 5) {
+    submitButton.style.display = "block"; 
+  } else {
+    submitButton.style.display = "none"; 
+  }
+});
 
 //event listeners on buttons
 submitButton.addEventListener("click", submitPreferences);
