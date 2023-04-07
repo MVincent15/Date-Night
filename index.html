@@ -31,7 +31,7 @@
     </header>
     <main class="columns">
      
-      <section class="">
+      <section class="column is-3">
         <div class="notification">
           <div class="content">
             <h3 class="has-text-link">Randomize Your Choices Here</h3>
@@ -39,37 +39,37 @@
               Select you preferences below and we will generate a random movie
               and some restaurant selections near you!
             </p>
+
             <div class="">
-              <div class="">
-                <label class="label has-text-link">Movie Genre</label>
-                <div class="field has-addons">
-                  <div class="control is-expanded">
-                    <div class="select is-fullwidth is-success">
-                      <select id="movieGenre">
-                        <option value="">Any</option>
-                        <option value="28">Action</option>
-                        <option value="12">Adventure</option>
-                        <option value="16">Animation</option>
-                        <option value="35">Comedy</option>
-                        <option value="80">Crime</option>
-                        <option value="99">Documentary</option>
-                        <option value="18">Drama</option>
-                        <option value="10751">Family</option>
-                        <option value="14">Fantasy</option>
-                        <option value="36">History</option>
-                        <option value="27">Horror</option>
-                        <option value="10402">Music</option>
-                        <option value="9648">Mystery</option>
-                        <option value="10749">Romance</option>
-                        <option value="878">Science Fiction</option>
-                        <option value="10770">TV Movie</option>
-                        <option value="53">Thriller</option>
-                        <option value="10752">War</option>
-                        <option value="37">Western</option>
-                      </select>
-                    </div>
+              <label class="label has-text-link">Movie Genre</label>
+              <div class="field has-addons">
+                <div class="control is-expanded">
+                  <div class="select is-fullwidth is-success">
+                    <select id="movieGenre">
+                      <option value="">Any</option>
+                      <option value="28">Action</option>
+                      <option value="12">Adventure</option>
+                      <option value="16">Animation</option>
+                      <option value="35">Comedy</option>
+                      <option value="80">Crime</option>
+                      <option value="99">Documentary</option>
+                      <option value="18">Drama</option>
+                      <option value="10751">Family</option>
+                      <option value="14">Fantasy</option>
+                      <option value="36">History</option>
+                      <option value="27">Horror</option>
+                      <option value="10402">Music</option>
+                      <option value="9648">Mystery</option>
+                      <option value="10749">Romance</option>
+                      <option value="878">Science Fiction</option>
+                      <option value="10770">TV Movie</option>
+                      <option value="53">Thriller</option>
+                      <option value="10752">War</option>
+                      <option value="37">Western</option>
+                    </select>
                   </div>
                 </div>
+              </div>
               <div class="">
                 <label class="label has-text-link">Cuisine</label>
                 <div class="field has-addons">
@@ -115,7 +115,7 @@
         <button class="modal-close is-large" aria-label="close"></button>
       </div>
     </section>
-    <section class="column is-half">
+    <section class="column">
       <div class="">
         <div class="is-parent">
           <div class="card movie-output-card">
@@ -136,18 +136,20 @@
                 <div class="media-content">
                   <div class="content">
                     <p>
-                      <strong id="movie-title">Movie Title</strong> 
+                      <strong id="movie-title">Movie Title</strong>
                       <br>
                       <small id="movie-release">Release Year</small>
                       <br>
                       <small id="movie-overview">Overview</small>
                     </p>
                   </div>
-                  <nav class="level is-mobile">  
-            </footer>
+                  <nav class="level is-mobile">
+                    </footer>
+                </div>
+            </div>
           </div>
-        </div>
-      </div>
+    </section>
+    <section class="column is-4">
       <div class="title is-parent is-vertical">
         <div class="card restaurant-map-card">
           <header class="card-header">
@@ -155,30 +157,20 @@
           </header>
           <div class="card-content">
             <div class="content google-map">
-              <iframe id="restaurant-map"
-                  width="450"
-                  height="250"
-                  frameborder="0"
-                  style="border: 0"
-                  referrerpolicy="no-referrer-when-downgrade"
-                  src=""
-                  allowfullscreen
-                >
+              <iframe id="restaurant-map" width="450" height="250" frameborder="0" style="border: 0"
+                referrerpolicy="no-referrer-when-downgrade" src="" allowfullscreen>
               </iframe>
               <p id="oops" class="hidden">Oops! Try the form again!</p>
             </div>
           </div>
         </div>
-
-      </section>
-      <!--could add a section which would display the saved movie outputs and possible restaurants?-->
-    </main>
-       <script src="./assets/js/script.js"></script>
-  </body>
-
-      </div>
     </section>
-  </html>
+    <!--could add a section which would display the saved movie outputs and possible restaurants?-->
+  </main>
+  <script src="./assets/js/script.js"></script>
+</body>
 
+</div>
+</section>
 
-
+</html>
