@@ -86,23 +86,24 @@ function generateMovieChoices(){
 
   var movieLink = "https://api.themoviedb.org/3/discover/movie?api_key=9382d0b84dae3b5b2a9af9c9b2ba057e&with_genres=" + chosenMovieGenre;
   
-   fetch(movieLink)
+  fetch(movieLink)
     .then(function (response) {
     return response.json();
     })
     .then(function (data) {
-    console.log(data);
-    for (var i = 0; i < data.results.length; i++) {
+  
+     var movieResults = data.results.length  
+     const randomIndex = Math.floor(Math.random() * movieResults);
+     const randomMovie = data.results[randomIndex];
 
-      var posterLink = "https://image.tmdb.org/t/p/original" + data.results[i].poster_path;
+     var posterLink = "https://image.tmdb.org/t/p/original" + randomMovie.poster_path;
+  
+     movieTitle.textContent = randomMovie.title;
+     movieRelease.textContent = randomMovie.release_date;
+     movieOverview.textContent = randomMovie.overview;
+     moviePoster.setAttribute("src", posterLink );
+  });
 
-      console.log(data.results[i].title)
-      movieTitle.textContent = data.results[i].title;
-      movieRelease.textContent = data.results[i].release_date;
-      movieOverview.textContent = data.results[i].overview;
-      moviePoster.setAttribute("src", posterLink );
-    }
-  })
 }
 function submitPreferences(event){
     //prevent page from reloading
