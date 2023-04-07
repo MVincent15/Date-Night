@@ -33,6 +33,9 @@ function init(){
     if (storedZipCode !== null){
         zipCodeText.value = storedZipCode;
     }
+    if(zipCodeText.value.length === 5){
+        submitButton.style.display = "block";
+    }
     //generate restaurant map
     generateRestaurantMap();
     generateMovieChoices();
