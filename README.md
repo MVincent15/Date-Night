@@ -24,6 +24,7 @@ Users can also save their last 10 selected dinner locations and movie views, so 
 
 ## Deployed Application
 
+https://mvincent15.github.io/Dinner-and-a-Movie/
 
 ## Code Citations
 
