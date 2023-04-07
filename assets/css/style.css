@@ -3,6 +3,7 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  font-family: 'Suwannaphum', serif;
 }
 
 .hidden{
@@ -67,3 +68,5 @@ body{
    background-color: midnightblue;
 
   }
+ 
+  
