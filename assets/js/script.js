@@ -2,11 +2,12 @@ var userZipCode;
 var chosenFoodGenre;
 var chosenMovieGenre;
 
-var movieTitle = document.getElementById("movie-title")
-var movieRelease = document.getElementById("movie-release")
-var movieDuration = document.getElementById("movie-duration")
-var movieOverview = document.getElementById("movie-overview")
-var moviePoster = document.getElementById("movie-poster")
+var movieTitle = document.getElementById("movie-title");
+var movieRelease = document.getElementById("movie-release");
+var movieDuration = document.getElementById("movie-duration");
+var movieOverview = document.getElementById("movie-overview");
+var moviePoster = document.getElementById("movie-poster");
+var oopsMessage = document.getElementById("oops");
 
 var restaurantMap = document.getElementById("restaurant-map");
 var zipCodeText = document.getElementById("zipcode");
@@ -34,18 +35,38 @@ function init(){
     }
     //generate restaurant map
     generateRestaurantMap();
+    generateMovieChoices();
 }
 
 //check if zip code is not 5 digits, if not, it will present a modal and clear the text field
 function validateZipCode() {
-    if (zipCodeText.value.length < 5 || zipCodeText.value.length > 5) {
-        zipCodeModal.classList.add('is-active');
-        zipCodeText.value = '';
+    var lettersAndSymbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+=-`~[]\{}|;':,./<>?".split("");
+    var userZipCode = zipCodeText.value;
+    for (let i = 0; i < userZipCode.length; i++) {
+        console.log(userZipCode[i]);
+        if(lettersAndSymbols.includes(userZipCode[i])){
+            modalAndMap();
+            return;
+        }
+    } 
+    if (userZipCode.length < 5 || userZipCode.length > 5) {
+        modalAndMap();
+    } else{
+        generateRestaurantMap();
     }
+}
+
+function modalAndMap(){
+    zipCodeModal.classList.add('is-active');
+    zipCodeText.value = '';
+    restaurantMap.classList.add("hidden");
+    oopsMessage.classList.remove("hidden");
 }
 
 //updates the google map snippet with food genre and zip code
 function generateRestaurantMap(){
+    //if map is hidden, makes it reappear
+    restaurantMap.classList.remove("hidden");
     //take user zipcode and cuisine selections
     userZipCode = zipCodeText.value;
     chosenFoodGenre = foodGenreText.value;
@@ -56,7 +77,7 @@ function generateRestaurantMap(){
     + chosenFoodGenre + "+restaurants+near+" + userZipCode;
     //add the link to the src attribute on the HTML page
     restaurantMap.setAttribute("src", mapLink);
-
+    
 }
 
 function generateMovieChoices(){
@@ -81,10 +102,8 @@ function generateMovieChoices(){
       movieOverview.textContent = data.results[i].overview;
       moviePoster.setAttribute("src", posterLink );
     }
-  });
+  })
 }
- submitButton.addEventListener("click", generateMovieChoices);
- 
 function submitPreferences(event){
     //prevent page from reloading
     event.preventDefault();
@@ -93,8 +112,9 @@ function submitPreferences(event){
     localStorage.setItem("foodGenre", JSON.stringify(foodGenreText.value));
     localStorage.setItem("zipcode", JSON.stringify(zipCodeText.value));
     //generate the restaurant map
-    generateRestaurantMap();
     validateZipCode();
+    generateMovieChoices();
+    
 }
 
 //event listeners on buttons
@@ -105,5 +125,3 @@ modalCloseButton.addEventListener('click', () => {
 
 //runs on load
 init();
-
-//
