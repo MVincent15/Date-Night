@@ -39,6 +39,7 @@ function init(){
 
 //check if zip code is not 5 digits, if not, it will present a modal and clear the text field
 function validateZipCode() {
+    var numbers = "1234567890".split();
     if (zipCodeText.value.length < 5 || zipCodeText.value.length > 5) {
         zipCodeModal.classList.add('is-active');
         zipCodeText.value = '';
@@ -83,8 +84,6 @@ function generateMovieChoices(){
       moviePoster.setAttribute("src", posterLink );
     }
   });
-}
- submitButton.addEventListener("click", generateMovieChoices);
  
 function submitPreferences(event){
     //prevent page from reloading
@@ -94,8 +93,10 @@ function submitPreferences(event){
     localStorage.setItem("foodGenre", JSON.stringify(foodGenreText.value));
     localStorage.setItem("zipcode", JSON.stringify(zipCodeText.value));
     //generate the restaurant map
-    generateRestaurantMap();
     validateZipCode();
+    generateRestaurantMap();
+    generateMovieChoices();
+    
 }
 
 //event listeners on buttons
