@@ -39,10 +39,21 @@ function init(){
 
 //check if zip code is not 5 digits, if not, it will present a modal and clear the text field
 function validateZipCode() {
-    var numbers = "1234567890".split();
-    if (zipCodeText.value.length < 5 || zipCodeText.value.length > 5) {
+    var lettersAndSymbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+=-`~[]\{}|;':,./<>?".split("");
+    var userZipCode = zipCodeText.value;
+    for (let i = 0; i < userZipCode.length; i++) {
+        console.log(userZipCode[i]);
+        if(lettersAndSymbols.includes(userZipCode[i])){
+            zipCodeModal.classList.add('is-active');
+            zipCodeText.value = '';
+            return;
+        }
+    } 
+    if (userZipCode.length < 5 || userZipCode.length > 5) {
         zipCodeModal.classList.add('is-active');
         zipCodeText.value = '';
+    } else{
+        generateRestaurantMap();
     }
 }
 
@@ -58,7 +69,7 @@ function generateRestaurantMap(){
     + chosenFoodGenre + "+restaurants+near+" + userZipCode;
     //add the link to the src attribute on the HTML page
     restaurantMap.setAttribute("src", mapLink);
-
+    
 }
 
 function generateMovieChoices(){
@@ -83,8 +94,8 @@ function generateMovieChoices(){
       movieOverview.textContent = data.results[i].overview;
       moviePoster.setAttribute("src", posterLink );
     }
-  });
- 
+  })
+}
 function submitPreferences(event){
     //prevent page from reloading
     event.preventDefault();
@@ -94,7 +105,6 @@ function submitPreferences(event){
     localStorage.setItem("zipcode", JSON.stringify(zipCodeText.value));
     //generate the restaurant map
     validateZipCode();
-    generateRestaurantMap();
     generateMovieChoices();
     
 }
@@ -107,5 +117,3 @@ modalCloseButton.addEventListener('click', () => {
 
 //runs on load
 init();
-
-//
