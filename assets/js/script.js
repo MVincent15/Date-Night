@@ -2,11 +2,12 @@ var userZipCode;
 var chosenFoodGenre;
 var chosenMovieGenre;
 
-var movieTitle = document.getElementById("movie-title")
-var movieRelease = document.getElementById("movie-release")
-var movieDuration = document.getElementById("movie-duration")
-var movieOverview = document.getElementById("movie-overview")
-var moviePoster = document.getElementById("movie-poster")
+var movieTitle = document.getElementById("movie-title");
+var movieRelease = document.getElementById("movie-release");
+var movieDuration = document.getElementById("movie-duration");
+var movieOverview = document.getElementById("movie-overview");
+var moviePoster = document.getElementById("movie-poster");
+var oopsMessage = document.getElementById("oops");
 
 var restaurantMap = document.getElementById("restaurant-map");
 var zipCodeText = document.getElementById("zipcode");
@@ -44,21 +45,28 @@ function validateZipCode() {
     for (let i = 0; i < userZipCode.length; i++) {
         console.log(userZipCode[i]);
         if(lettersAndSymbols.includes(userZipCode[i])){
-            zipCodeModal.classList.add('is-active');
-            zipCodeText.value = '';
+            modalAndMap();
             return;
         }
     } 
     if (userZipCode.length < 5 || userZipCode.length > 5) {
-        zipCodeModal.classList.add('is-active');
-        zipCodeText.value = '';
+        modalAndMap();
     } else{
         generateRestaurantMap();
     }
 }
 
+function modalAndMap(){
+    zipCodeModal.classList.add('is-active');
+    zipCodeText.value = '';
+    restaurantMap.classList.add("hidden");
+    oopsMessage.classList.remove("hidden");
+}
+
 //updates the google map snippet with food genre and zip code
 function generateRestaurantMap(){
+    //if map is hidden, makes it reappear
+    restaurantMap.classList.remove("hidden");
     //take user zipcode and cuisine selections
     userZipCode = zipCodeText.value;
     chosenFoodGenre = foodGenreText.value;
