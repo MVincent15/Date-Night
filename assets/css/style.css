@@ -73,10 +73,37 @@ body{
   }
 
   @media screen and (max-width: 1024px) {
+    /* reduce the font size of the hero title and subtitle */
+    .hero-body .title {
+      font-size: 2rem;
+    }
+    .hero-body .subtitle {
+      font-size: 1.5rem;
+    }
+  
+    /* make the columns stack on top of each other */
     .columns {
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    }
+    .column.is-3 {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  
+    /* reduce the size of the selection inputs and labels */
+    .label {
+      font-size: 0.9rem;
+    }
+    .select {
+      font-size: 0.9rem;
+      padding: 0.2rem 0.5rem;
+    }
+  
+    /* center the submit button */
+    #submit {
+      margin: 0 auto;
+      display: block;
+      width: 80%;
     }
   }
  
