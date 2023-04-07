@@ -6,9 +6,6 @@ As a part of a couple
 I want to figure out dinner and a movie for a date night
 So that I don't waste time deciding, and I have new options provided for me based on my search.
 
-## Code Citations
-
-Responsive Google Maps: https://blog.hubspot.com/website/how-to-embed-google-map-in-html#:~:text=To%20make%20a%20responsive%20Google%20Map%20in%20HTML%2C%20take%20your,with%20the%20class%20google%2Dmap.&text=Here's%20the%20result.,the%20size%20of%20your%20browser.
 
 ## Description
 
@@ -17,10 +14,19 @@ Determining what to do on a date night can be tough. Often conversations between
 Users can also save their last 10 selected dinner locations and movie views, so they can ensure they're trying new options each time they use the application. 
 
 
+## Future Development Ideas
+
+
+
 ## Screenshots
 
 
 
 ## Deployed Application
+
+
+## Code Citations
+
+Responsive Google Maps: https://blog.hubspot.com/website/how-to-embed-google-map-in-html#:~:text=To%20make%20a%20responsive%20Google%20Map%20in%20HTML%2C%20take%20your,with%20the%20class%20google%2Dmap.&text=Here's%20the%20result.,the%20size%20of%20your%20browser.
 
 
