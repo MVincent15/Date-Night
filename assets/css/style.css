@@ -71,5 +71,13 @@ body{
    background-color: midnightblue;
 
   }
+
+  @media screen and (max-width: 1024px) {
+    .columns {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
  
   
