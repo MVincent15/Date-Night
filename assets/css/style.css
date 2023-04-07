@@ -14,7 +14,10 @@ body{
   display: none;
 }
 
-
+.card-movie-title {
+  font-size: 20px;
+  font-style:bold;  
+}
 .movie-output-card {
     background-color: white;
 }
