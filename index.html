@@ -33,8 +33,8 @@
       <section class="column is-3">
         <div class="notification">
           <div class="content">
-            <h3 class="has-text-link">Your Selections</h3>
-            <p class="has-text-link">
+            <h3 class="has-text-link is-size-3">Your Selections</h3>
+            <p class="has-text-link is-size-5">
               Select you preferences below and we will generate a random movie
               and some restaurant selections near you!
             </p>
@@ -119,42 +119,33 @@
         <div class="is-parent">
           <div class="card movie-output-card">
             <header class="card-header card-movie-title">
-              <h1 class="card-header-title i has-text-link">
+              <h1 class="card-header-title i has-text-link is-size-3">
                 Movie Selection
               </h1>
-
             </header>
-            <div class="card-content">
-              <div class="content">
-              </div>
-              <article class="media">
-                <figure class="media-left">
-                  <p class="image is-128x128">
-                    <img id="movie-poster" src="">
-                  </p>
+            <div class="container is-fluid card-content columns">
+              <figure class="column is-one-third">
+                <img id="movie-poster" class="image" src="">
                 </figure>
-                <div class="media-content">
+                <div class="media-content column">
                   <div class="content">
                     <p>
-                      <strong id="movie-title"></strong> 
-
+                      <strong id="movie-title" class="is-size-4"></strong>
                       <br>
-                      <small id="movie-release"></small>
+                      <small id="movie-release" class="is-size-5"></small>
                       <br>
-                      <small id="movie-overview"></small>
+                      <small id="movie-overview" class="is-size-5"></small>
                     </p>
                   </div>
-                  <nav class="level is-mobile">
-                    </footer>
-                </div>
             </div>
+          </div>
           </div>
     </section>
     <section class="column is-4">
       <div class="title is-parent is-vertical">
         <div class="card restaurant-map-card">
           <header class="card-header">
-            <p class="card-header-title has-text-link">Restaurant Choices</p>
+            <h1 class="card-header-title has-text-link is-size-3">Restaurant Choices</h1>
           </header>
           <div class="card-content">
             <div class="content google-map">
