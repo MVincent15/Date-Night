@@ -15,16 +15,28 @@ Users can also save their last 10 selected dinner locations and movie views, so 
 
 
 ## Future Development Ideas
+Randomizing page pull of movie data in addition to the 20 on each page
+Further filtering of restaurant selections using a different API, then displaying those on a map
+Further filtering movie criteria to get a more dialed in option
+Expanding on UI for saving selections and choices
+Adding options to figure out where to view the given movie and provide those dynamically
+When clicking an option from the map, displaying in our UI contact information, ratings, store hours, etc. 
+
 
 
 
 ## Screenshots
-
+![deployed site](./assets/images/start%20screen.png)
+![deployed site](./assets/images/submit%20button.png)
+![deployed site](./assets/images/modal%20screen.png)
 
 
 ## Deployed Application
 
-https://mvincent15.github.io/Dinner-and-a-Movie/
+[Dinner and a Movie](https://mvincent15.github.io/Dinner-and-a-Movie/)
+
+## Contributor's
+Isaac Melanson, Megan Vincent, Will Wood, Jason Weaver
 
 ## Code Citations
 
