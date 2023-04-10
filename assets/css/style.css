@@ -1,110 +1,104 @@
 html,
-body{
+body {
   background-image: url(../images/night-sky.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
- font-family: 'Suwannaphum', serif;
-  
- 
+  font-family: "Suwannaphum", serif;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
 .card-movie-title {
   font-size: 20px;
-  font-style:bold;  
+  font-style: bold;
 }
 .movie-output-card {
-    background-color: white;
+  background-color: white;
 }
 
 .google-map {
-    padding-bottom: 50%;
-    position: relative;
+  padding-bottom: 50%;
+  position: relative;
 }
 
 .google-map iframe {
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
 }
 
 .modal {
-    display: none;
-  }
-  
-  .modal.is-active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .modal-background {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-  
-  .modal-content {
-    background-color: lightgreen;
-    padding: 20px;
-    border-radius: 4px;
-    width: 50%;
-    position: relative;
+  display: none;
+}
 
-  }
-  
-  .modal-close {
-    position: absolute;
-   transform: translate(-50%, -50%);
-    top: 46%;
-   right: 24%;
-   background-color: midnightblue;
+.modal.is-active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.modal-background {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal-content {
+  background-color: lightgreen;
+  padding: 20px;
+  border-radius: 4px;
+  width: 50%;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 46%;
+  right: 24%;
+  background-color: midnightblue;
+}
+
+@media screen and (max-width: 1024px) {
+  /* reduce the font size of the hero title and subtitle */
+  .hero-body .title {
+    font-size: 2rem;
+  }
+  .hero-body .subtitle {
+    font-size: 1.5rem;
   }
 
-  @media screen and (max-width: 1024px) {
-    /* reduce the font size of the hero title and subtitle */
-    .hero-body .title {
-      font-size: 2rem;
-    }
-    .hero-body .subtitle {
-      font-size: 1.5rem;
-    }
-  
-    /* make the columns stack on top of each other */
-    .columns {
-      flex-direction: column;
-    }
-    .column.is-3 {
-      width: 100%;
-      margin-bottom: 1rem;
-    }
-  
-    /* reduce the size of the selection inputs and labels */
-    .label {
-      font-size: 0.9rem;
-    }
-    .select {
-      font-size: 0.9rem;
-      padding: 0.2rem 0.5rem;
-    }
-  
-    /* center the submit button */
-    #submit {
-      margin: 0 auto;
-      display: block;
-      width: 80%;
-    }
+  /* make the columns stack on top of each other */
+  .columns {
+    flex-direction: column;
   }
- 
-  
+  .column.is-3 {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  /* reduce the size of the selection inputs and labels */
+  .label {
+    font-size: 0.9rem;
+  }
+  .select {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  /* center the submit button */
+  #submit {
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+  }
+}
